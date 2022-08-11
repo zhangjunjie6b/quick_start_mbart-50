@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+service MBARTLarge50 {
+  rpc InterpretE2C (EnglishRequest) returns (ChineseReply) {}
+}
+
+message EnglishRequest {
+  string message = 1;
+}
+
+
+message ChineseReply {
+  string message = 1;
+}
+
+
+//python -m grpc_tools.protoc -I ./pd --python_out=./pd --grpc_python_out=./pd ./pd/MBARTLarge50.proto
